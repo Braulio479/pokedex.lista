@@ -1,0 +1,170 @@
+/* Paleta inspirada en Gengar 💜👻 */
+:root {
+    --bg-main: #2b2242;        
+    --bg-card: #5a4d76;        
+    --primary: #9b89b5;        
+    --primary-hover: #b8a5d4;  
+    --text-light: #f0ebf5;     
+    --text-muted: #c4b5d9;     
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--bg-card);
+    border-bottom: 4px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+/* Barra de búsqueda */
+.search-container {
+    max-width: 500px;
+    margin: 0 auto 1.5rem auto;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid var(--primary);
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input::placeholder {
+    color: var(--text-muted);
+}
+
+#search-input:focus {
+    border-color: var(--primary-hover);
+}
+
+/* Botones de tipos */
+#type-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.type-btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.type-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.type-btn.active {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Colores oficiales de los tipos */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-grass { background-color: #78C850; }
+.type-electric { background-color: #F8D030; color: #333; text-shadow: none; }
+.type-ice { background-color: #98D8D8; color: #333; text-shadow: none; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+
+/* Contenedor y tarjetas */
+#pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border: 2px solid var(--primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(155, 89, 182, 0.4);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 8px rgba(155, 89, 182, 0.6));
+}
+
+.card-title {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.card-id {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.card-type {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    text-transform: capitalize;
+}
